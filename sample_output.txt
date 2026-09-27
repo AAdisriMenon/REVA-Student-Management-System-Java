@@ -1,0 +1,725 @@
+﻿================================================================================
+   REVA UNIVERSITY - STUDENT MANAGEMENT SYSTEM
+   B.Sc. (BSTCs) Sem V - Java Programming (Unit I & II Project)
+================================================================================
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+=========================================================================================================
+STUDENT ID     | SRN          | NAME                   | DEPT   | SEM  | GRADE  | FEE DUE (INR) | HOSTELLER 
+---------------------------------------------------------------------------------------------------------
+REVA-STU-1001  | R24CS001     | Arjun Nair             | CSE    | 5    | O      |      63975.00 | NO        
+REVA-STU-1002  | R24CS002     | Priya Sharma           | CSE    | 5    | O      |     105315.00 | YES       
+REVA-STU-1003  | R24CS003     | Rahul Menon            | CSE    | 6    | A      |      72500.00 | NO        
+REVA-STU-1004  | R24EC001     | Sneha Iyer             | ECE    | 5    | A      |     107550.00 | YES       
+REVA-STU-1005  | R24EC002     | Karthik Rao            | ECE    | 6    | B      |      68500.00 | NO        
+REVA-STU-1006  | R24EC003     | Ananya Krishnan        | ECE    | 3    | S      |     100400.00 | YES       
+REVA-STU-1007  | R24ME001     | Rohan Mehta            | MECH   | 7    | B      |      98325.00 | YES       
+REVA-STU-1008  | R24ME002     | Meera Nair             | MECH   | 4    | A      |      57150.00 | NO        
+REVA-STU-1009  | R24ME003     | Vivek Kumar            | MECH   | 5    | C      |      98500.00 | YES       
+REVA-STU-1010  | R24CV001     | Aditi Shah             | CIVIL  | 4    | A      |      56500.00 | NO        
+REVA-STU-1011  | R24CV002     | Nikhil Varma           | CIVIL  | 6    | B      |      95670.00 | YES       
+REVA-STU-1012  | R24CV003     | Diya Reddy             | CIVIL  | 3    | A      |      48025.00 | NO        
+REVA-STU-1013  | R24IS001     | Harish Bhat            | ISE    | 5    | O      |      61360.00 | NO        
+REVA-STU-1014  | R24IS002     | Kavya Rao              | ISE    | 5    | A      |     103950.00 | YES       
+REVA-STU-1015  | R24IS003     | Akash Jain             | ISE    | 4    | D      |      70500.00 | NO        
+REVA-STU-1016  | R24EE001     | Neha Pillai            | EEE    | 6    | A      |      97835.00 | YES       
+REVA-STU-1017  | R24EE002     | Rohit Das              | EEE    | 4    | B      |      64500.00 | NO        
+REVA-STU-1018  | R24EE003     | Ishita Menon           | EEE    | 3    | O      |      90525.00 | YES       
+REVA-STU-1019  | R24BT001     | Varun Shetty           | BT     | 4    | A      |      61110.00 | NO        
+REVA-STU-1020  | R24BT002     | Pooja Nair             | BT     | 5    | O      |      94640.00 | YES       
+REVA-STU-1021  | R24BT003     | Manoj Kulkarni         | BT     | 4    | C      |      57100.00 | NO        
+REVA-STU-1022  | R24AH001     | Shreya Joshi           | AHS    | 4    | A      |      99630.00 | YES       
+REVA-STU-1023  | R24AH002     | Deepa Hegde            | AHS    | 5    | A      |      51425.00 | NO        
+REVA-STU-1024  | R24AH003     | Tanvi Deshmukh         | AHS    | 2    | B      |     100300.00 | YES       
+REVA-STU-1025  | R24CM001     | Aditya Verma           | COM    | 4    | A      |      52500.00 | NO        
+REVA-STU-1026  | R24CM002     | Bhavana Murthy         | COM    | 6    | O      |      81520.00 | YES       
+REVA-STU-1027  | R24CM003     | Chetan Gowda           | COM    | 4    | C      |      48100.00 | NO        
+REVA-STU-1028  | R24MG001     | Divya Swaminathan      | MGT    | 5    | O      |      94435.00 | YES       
+REVA-STU-1029  | R24MG002     | Eashan Prabhu          | MGT    | 4    | B      |      56500.00 | NO        
+REVA-STU-1030  | R24MG003     | Fatima Zohra           | MGT    | 6    | A      |      95670.00 | YES       
+REVA-STU-1031  | R24PA001     | Gayatri Nambiar        | PA     | 4    | O      |      39375.00 | NO        
+REVA-STU-1032  | R24PA002     | Hemant Shastri         | PA     | 5    | B      |      84150.00 | YES       
+REVA-STU-1033  | R24PA003     | Indu Ramaswamy         | PA     | 3    | A      |      44500.00 | NO        
+=========================================================================================================
+Total Enrolled Students: 33 | Total Database Capacity: 100
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+--- [ADD NEW STUDENT] ---
+Enter Student Full Name: Enter Age (16 - 60): Enter SRN (e.g., R24CS010): 
+Select Academic Department:
+   1. CSE    - Computer Science & Engineering
+   2. ECE    - Electronics & Communication Engineering
+   3. MECH   - Mechanical Engineering
+   4. CIVIL  - Civil Engineering
+   5. ISE    - Information Science & Engineering
+   6. EEE    - Electrical & Electronics Engineering
+   7. BT     - Biotechnology
+   8. AHS    - Allied Health Sciences
+   9. COM    - School of Commerce
+  10. MGT    - School of Management Studies
+  11. PA     - School of Performing Arts
+Select Department (1-11): Enter Current Semester (1-8): Is the student residing in University Hostel? (yes/no): Enter Registered Course Credits (10-30): Enter Scholarship Discount Percentage (0 - 100): 
+Enter Marks for 5 Core Subjects (0 - 100 each):
+  Subject 1 Marks:   Subject 2 Marks:   Subject 3 Marks:   Subject 4 Marks:   Subject 5 Marks: 
+[SUCCESS] Student Record Successfully Created!
+  -> Assigned Student ID : REVA-STU-1034
+  -> Total Marks         : 455 / 500 (91.00%)
+  -> Computed Grade      : 0 (Outstanding Performance (Top Tier))
+  -> Computed Semester Fee: INR 104240.00
+  ----------------- Fee Breakdown -----------------
+  Tuition Fee              : INR   76800.00 (24 credits @ 3200.00)
+  Campus Amenities         : INR    8500.00
+  Hostel & Mess Charge     : INR   45000.00
+  Gross Total              : INR  130300.00
+  Scholarship Deduction    : INR   26060.00 (20.0% discount)
+  Net Semester Fee         : INR  104240.00
+  -------------------------------------------------
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+--- [SEARCH BY SRN] ---
+Enter SRN to search (e.g. R24CS001): 
+[MATCH FOUND]:
+------------------------------------------------------------
+ [STUDENT RECORD] Pooja Sharma (SRN: R24CS010)
+------------------------------------------------------------
+  Student ID          : REVA-STU-1034
+  Full Name           : Pooja Sharma
+  Age                 : 20
+  SRN                 : R24CS010
+  Department          : Computer Science & Engineering
+  Semester            : 5
+  Admission Number    : 2026000034
+  Hosteller           : YES
+  Scholarship         : 20.0%
+  Marks (5 Subjects)  : [92, 88, 95, 91, 89]
+  Calculated Grade    : O
+  Outstanding Fee     : INR 104240.00
+------------------------------------------------------------
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+--- [SEARCH BY PARTIAL NAME] ---
+Enter name or partial letters: 
+[FOUND 2 MATCHING RECORD(S)]:
+------------------------------------------------------------
+ [STUDENT RECORD] Priya Sharma (SRN: R24CS002)
+------------------------------------------------------------
+  Student ID          : REVA-STU-1002
+  Full Name           : Priya Sharma
+  Age                 : 20
+  SRN                 : R24CS002
+  Department          : Computer Science & Engineering
+  Semester            : 5
+  Admission Number    : 2026000002
+  Hosteller           : YES
+  Scholarship         : 15.0%
+  Marks (5 Subjects)  : [92, 88, 95, 91, 89]
+  Calculated Grade    : O
+  Outstanding Fee     : INR 105315.00
+------------------------------------------------------------
+------------------------------------------------------------
+ [STUDENT RECORD] Pooja Sharma (SRN: R24CS010)
+------------------------------------------------------------
+  Student ID          : REVA-STU-1034
+  Full Name           : Pooja Sharma
+  Age                 : 20
+  SRN                 : R24CS010
+  Department          : Computer Science & Engineering
+  Semester            : 5
+  Admission Number    : 2026000034
+  Hosteller           : YES
+  Scholarship         : 20.0%
+  Marks (5 Subjects)  : [92, 88, 95, 91, 89]
+  Calculated Grade    : O
+  Outstanding Fee     : INR 104240.00
+------------------------------------------------------------
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+------------------------------------------------------------
+            CALCULATE / RECORD SEMESTER FEE
+------------------------------------------------------------
+Enter Student SRN: 
+----------------- Student Fee Assessment -------------------
+Student       : Pooja Sharma
+SRN           : R24CS010
+Department    : Computer Science & Engineering
+Semester      : 5
+Credits       : 24 (Base Rate: INR 3200.00/credit)
+Hosteller     : YES
+Scholarship   : 20.0%
+Semester Fee  : INR 104240.00
+Current Due   : INR 104240.00
+------------------------------------------------------------
+Enter Payment Amount (INR): [SUCCESS] Payment of INR 15000.00 recorded for Pooja Sharma (R24CS010). New Balance: INR 89240.00
+
+------------------------------------------------------------
+                        FEE PAYMENT RECEIPT
+------------------------------------------------------------
+Student       : Pooja Sharma
+SRN           : R24CS010
+Total Fee     : INR 104240.00
+Previous Due  : INR 104240.00
+Payment       : INR 15000.00
+Remaining Due : INR 89240.00
+------------------------------------------------------------
+
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+--- [SORT STUDENT RECORDS] ---
+Select Sorting Criteria:
+  1. Sort by Student Name (Alphabetical)
+  2. Sort by Student SRN
+  3. Sort by Semester
+  4. Sort by Fee Due (Ascending)
+  0. Return to Main Menu
+Enter sorting choice (0-4): [SUCCESS] Records sorted alphabetically by Student Name.
+
+=========================================================================================================
+STUDENT ID     | SRN          | NAME                   | DEPT   | SEM  | GRADE  | FEE DUE (INR) | HOSTELLER 
+---------------------------------------------------------------------------------------------------------
+REVA-STU-1010  | R24CV001     | Aditi Shah             | CIVIL  | 4    | A      |      56500.00 | NO        
+REVA-STU-1025  | R24CM001     | Aditya Verma           | COM    | 4    | A      |      52500.00 | NO        
+REVA-STU-1015  | R24IS003     | Akash Jain             | ISE    | 4    | D      |      70500.00 | NO        
+REVA-STU-1006  | R24EC003     | Ananya Krishnan        | ECE    | 3    | O      |     100400.00 | YES       
+REVA-STU-1001  | R24CS001     | Arjun Nair             | CSE    | 5    | O      |      63975.00 | NO        
+REVA-STU-1026  | R24CM002     | Bhavana Murthy         | COM    | 6    | O      |      81520.00 | YES       
+REVA-STU-1027  | R24CM003     | Chetan Gowda           | COM    | 4    | C      |      48100.00 | NO        
+REVA-STU-1023  | R24AH002     | Deepa Hegde            | AHS    | 5    | A      |      51425.00 | NO        
+REVA-STU-1028  | R24MG001     | Divya Swaminathan      | MGT    | 5    | O      |      94435.00 | YES       
+REVA-STU-1012  | R24CV003     | Diya Reddy             | CIVIL  | 3    | A      |      48025.00 | NO        
+REVA-STU-1029  | R24MG002     | Eashan Prabhu          | MGT    | 4    | B      |      56500.00 | NO        
+REVA-STU-1030  | R24MG003     | Fatima Zohra           | MGT    | 6    | A      |      95670.00 | YES       
+REVA-STU-1031  | R24PA001     | Gayatri Nambiar        | PA     | 4    | O      |      39375.00 | NO        
+REVA-STU-1013  | R24IS001     | Harish Bhat            | ISE    | 5    | O      |      61360.00 | NO        
+REVA-STU-1032  | R24PA002     | Hemant Shastri         | PA     | 5    | B      |      84150.00 | YES       
+REVA-STU-1033  | R24PA003     | Indu Ramaswamy         | PA     | 3    | A      |      44500.00 | NO        
+REVA-STU-1018  | R24EE003     | Ishita Menon           | EEE    | 3    | O      |      90525.00 | YES       
+REVA-STU-1005  | R24EC002     | Karthik Rao            | ECE    | 6    | B      |      68500.00 | NO        
+REVA-STU-1014  | R24IS002     | Kavya Rao              | ISE    | 5    | A      |     103950.00 | YES       
+REVA-STU-1021  | R24BT003     | Manoj Kulkarni         | BT     | 4    | C      |      57100.00 | NO        
+REVA-STU-1008  | R24ME002     | Meera Nair             | MECH   | 4    | A      |      57150.00 | NO        
+REVA-STU-1016  | R24EE001     | Neha Pillai            | EEE    | 6    | A      |      97835.00 | YES       
+REVA-STU-1011  | R24CV002     | Nikhil Varma           | CIVIL  | 6    | B      |      95670.00 | YES       
+REVA-STU-1020  | R24BT002     | Pooja Nair             | BT     | 5    | O      |      94640.00 | YES       
+REVA-STU-1034  | R24CS010     | Pooja Sharma           | CSE    | 5    | O      |      89240.00 | YES       
+REVA-STU-1002  | R24CS002     | Priya Sharma           | CSE    | 5    | O      |     105315.00 | YES       
+REVA-STU-1003  | R24CS003     | Rahul Menon            | CSE    | 6    | A      |      72500.00 | NO        
+REVA-STU-1007  | R24ME001     | Rohan Mehta            | MECH   | 7    | B      |      98325.00 | YES       
+REVA-STU-1017  | R24EE002     | Rohit Das              | EEE    | 4    | B      |      64500.00 | NO        
+REVA-STU-1022  | R24AH001     | Shreya Joshi           | AHS    | 4    | A      |      99630.00 | YES       
+REVA-STU-1004  | R24EC001     | Sneha Iyer             | ECE    | 5    | A      |     107550.00 | YES       
+REVA-STU-1024  | R24AH003     | Tanvi Deshmukh         | AHS    | 2    | B      |     100300.00 | YES       
+REVA-STU-1019  | R24BT001     | Varun Shetty           | BT     | 4    | A      |      61110.00 | NO        
+REVA-STU-1009  | R24ME003     | Vivek Kumar            | MECH   | 5    | C      |      98500.00 | YES       
+=========================================================================================================
+Total Enrolled Students: 34 | Total Database Capacity: 100
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+==========================================================================================
+                        DEPARTMENT-WISE FEE ANALYTICS & REVENUE SUMMARY                   
+==========================================================================================
+CODE   | DEPARTMENT                             | STUDENTS | TOTAL DUE (INR)  | AVERAGE DUE (INR)
+------------------------------------------------------------------------------------------
+CSE    | Computer Science & Engineering         |        4 |        331030.00 |         82757.50
+ECE    | Electronics & Communication Engineering |        3 |        276450.00 |         92150.00
+MECH   | Mechanical Engineering                 |        3 |        253975.00 |         84658.33
+CIVIL  | Civil Engineering                      |        3 |        200195.00 |         66731.67
+ISE    | Information Science & Engineering      |        3 |        235810.00 |         78603.33
+EEE    | Electrical & Electronics Engineering   |        3 |        252860.00 |         84286.67
+BT     | Biotechnology                          |        3 |        212850.00 |         70950.00
+AHS    | Allied Health Sciences                 |        3 |        251355.00 |         83785.00
+COM    | School of Commerce                     |        3 |        182120.00 |         60706.67
+MGT    | School of Management Studies           |        3 |        246605.00 |         82201.67
+PA     | School of Performing Arts              |        3 |        168025.00 |         56008.33
+==========================================================================================
+  Total Enrolled Students Across University : 34
+  Students with Cleared Dues               : 0
+  Students with Outstanding Dues           : 34
+  Gross Revenue Outstanding Across Depts   : INR 2611275.00
+  University Average Fee Due Per Student    : INR 76802.21
+==========================================================================================
+
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+==========================================================================================
+                               UNIVERSITY PERSONNEL DIRECTORY                              
+==========================================================================================
+
+STUDENTS (34 Registered)
+------------------------------------------------------------------------------------------
+  [CIVIL] Aditi Shah             | SRN: R24CV001   | Sem: 4 | Grade: A
+  [COM ] Aditya Verma           | SRN: R24CM001   | Sem: 4 | Grade: A
+  [ISE ] Akash Jain             | SRN: R24IS003   | Sem: 4 | Grade: D
+  [ECE ] Ananya Krishnan        | SRN: R24EC003   | Sem: 3 | Grade: O
+  [CSE ] Arjun Nair             | SRN: R24CS001   | Sem: 5 | Grade: O
+  [COM ] Bhavana Murthy         | SRN: R24CM002   | Sem: 6 | Grade: O
+  [COM ] Chetan Gowda           | SRN: R24CM003   | Sem: 4 | Grade: C
+  [AHS ] Deepa Hegde            | SRN: R24AH002   | Sem: 5 | Grade: A
+  [MGT ] Divya Swaminathan      | SRN: R24MG001   | Sem: 5 | Grade: O
+  [CIVIL] Diya Reddy             | SRN: R24CV003   | Sem: 3 | Grade: A
+  [MGT ] Eashan Prabhu          | SRN: R24MG002   | Sem: 4 | Grade: B
+  [MGT ] Fatima Zohra           | SRN: R24MG003   | Sem: 6 | Grade: A
+  [PA  ] Gayatri Nambiar        | SRN: R24PA001   | Sem: 4 | Grade: O
+  [ISE ] Harish Bhat            | SRN: R24IS001   | Sem: 5 | Grade: O
+  [PA  ] Hemant Shastri         | SRN: R24PA002   | Sem: 5 | Grade: B
+  [PA  ] Indu Ramaswamy         | SRN: R24PA003   | Sem: 3 | Grade: A
+  [EEE ] Ishita Menon           | SRN: R24EE003   | Sem: 3 | Grade: O
+  [ECE ] Karthik Rao            | SRN: R24EC002   | Sem: 6 | Grade: B
+  [ISE ] Kavya Rao              | SRN: R24IS002   | Sem: 5 | Grade: A
+  [BT  ] Manoj Kulkarni         | SRN: R24BT003   | Sem: 4 | Grade: C
+  [MECH] Meera Nair             | SRN: R24ME002   | Sem: 4 | Grade: A
+  [EEE ] Neha Pillai            | SRN: R24EE001   | Sem: 6 | Grade: A
+  [CIVIL] Nikhil Varma           | SRN: R24CV002   | Sem: 6 | Grade: B
+  [BT  ] Pooja Nair             | SRN: R24BT002   | Sem: 5 | Grade: O
+  [CSE ] Pooja Sharma           | SRN: R24CS010   | Sem: 5 | Grade: O
+  [CSE ] Priya Sharma           | SRN: R24CS002   | Sem: 5 | Grade: O
+  [CSE ] Rahul Menon            | SRN: R24CS003   | Sem: 6 | Grade: A
+  [MECH] Rohan Mehta            | SRN: R24ME001   | Sem: 7 | Grade: B
+  [EEE ] Rohit Das              | SRN: R24EE002   | Sem: 4 | Grade: B
+  [AHS ] Shreya Joshi           | SRN: R24AH001   | Sem: 4 | Grade: A
+  [ECE ] Sneha Iyer             | SRN: R24EC001   | Sem: 5 | Grade: A
+  [AHS ] Tanvi Deshmukh         | SRN: R24AH003   | Sem: 2 | Grade: B
+  [BT  ] Varun Shetty           | SRN: R24BT001   | Sem: 4 | Grade: A
+  [MECH] Vivek Kumar            | SRN: R24ME003   | Sem: 5 | Grade: C
+
+FACULTY (22 Appointed)
+------------------------------------------------------------------------------------------
+  [CSE ] Dr. Vikram Shah          | ID: FAC-CSE-01 | Professor & HOD        | Spec: Artificial Intelligence & Machine Learning
+  [CSE ] Prof. Ananya Rao         | ID: FAC-CSE-02 | Assistant Professor    | Spec: Cloud Computing & Distributed Systems
+  [ECE ] Dr. Rajiv Nair           | ID: FAC-ECE-01 | Professor & Dean       | Spec: VLSI Design & Embedded Systems
+  [ECE ] Prof. Meera Iyer         | ID: FAC-ECE-02 | Associate Professor    | Spec: Wireless Communication & Signal Processing
+  [MECH] Dr. Suresh Bhat          | ID: FAC-MEC-01 | Professor              | Spec: Thermal Engineering & Fluid Dynamics
+  [MECH] Prof. Kavya Menon        | ID: FAC-MEC-02 | Associate Professor    | Spec: Robotics & Computer Integrated Manufacturing
+  [CIVIL] Dr. Arvind Kumar         | ID: FAC-CIV-01 | Professor & HOD        | Spec: Structural Engineering & Earthquake Dynamics
+  [CIVIL] Prof. Neha Sharma        | ID: FAC-CIV-02 | Assistant Professor    | Spec: Environmental Geotechnics
+  [ISE ] Dr. Harish Kulkarni      | ID: FAC-ISE-01 | Professor              | Spec: Cybersecurity & Cryptography
+  [ISE ] Prof. Sunita Reddy       | ID: FAC-ISE-02 | Associate Professor    | Spec: Big Data Analytics & Data Science
+  [EEE ] Dr. Ramesh Murthy        | ID: FAC-EEE-01 | Professor & HOD        | Spec: Renewable Energy Systems & Smart Grids
+  [EEE ] Prof. Deepa Joseph       | ID: FAC-EEE-02 | Assistant Professor    | Spec: Power Electronics & Electric Drives
+  [BT  ] Dr. Sandeep Hegde        | ID: FAC-BIO-01 | Professor              | Spec: Genetic Engineering & Molecular Biology
+  [BT  ] Prof. Rashmi Prabhu      | ID: FAC-BIO-02 | Associate Professor    | Spec: Bioinformatics & Bioprocess Technology
+  [AHS ] Dr. Anand Swamy          | ID: FAC-AHS-01 | Professor & Dean       | Spec: Clinical Pathology & Diagnostic Medicine
+  [AHS ] Prof. Shilpa Shenoy      | ID: FAC-AHS-02 | Associate Professor    | Spec: Medical Imaging & Healthcare Informatics
+  [COM ] Dr. Bhaskar Shenoy       | ID: FAC-COM-01 | Professor & Director   | Spec: Corporate Finance & Taxation
+  [COM ] Prof. Lakshmi Narayanan  | ID: FAC-COM-02 | Associate Professor    | Spec: Financial Accounting & Auditing
+  [MGT ] Dr. Keshava Prasad       | ID: FAC-MGT-01 | Professor & Dean       | Spec: Strategic Management & International Business
+  [MGT ] Prof. Monica D'Souza     | ID: FAC-MGT-02 | Associate Professor    | Spec: Organizational Behavior & Human Resources
+  [PA  ] Dr. Vasundhara Das       | ID: FAC-ART-01 | Professor & HOD        | Spec: Classical Indian Music & Ethnomusicology
+  [PA  ] Prof. Shankar Mahadevan Nair | ID: FAC-ART-02 | Associate Professor    | Spec: Theatrical Arts & Choreography
+==========================================================================================
+
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+============================================================
+             OOP & JAVA EVALUATOR MODE
+============================================================
+
+ 1.  Data Types, Variables & Scope
+ 2.  Operators & Operator Precedence
+ 3.  Type Conversion & Casting
+ 4.  Control Flow & Jump Statements
+ 5.  Arrays & String Methods
+ 6.  Constructors & Method Overloading
+ 7.  Static Members & Parameter Passing
+ 8.  Inheritance, super & final
+ 9.  Polymorphism & Dynamic Binding
+10.  Abstract Classes & Methods
+11.  Interfaces & Interface References
+12.  Object Class Methods
+13.  Packages & CLASSPATH
+14.  Run All Syllabus Demonstrations
+ 0.  Back to Main Menu
+
+============================================================
+Enter your choice: 
+============================================================
+ 2. OPERATORS & OPERATOR PRECEDENCE DEMONSTRATION
+============================================================
+--- Operator Precedence Demonstration ---
+10 + 5 * 2 = 20
+(10 + 5) * 2 = 30
+
+Bitwise Operators Demonstration using Student Status Bitmask:
+Target: Arjun Nair (R24CS001)
+1. Status Bitmask (Integer)  : 12 (Binary: 1100)
+2. Left Shift (1 << 2)       : 4 (Scholarship Flag constant)
+3. Bitwise AND (mask & 2)    : 0 (Hosteller Flag check: NO)
+4. Bitwise OR (mask | 8)     : 12 (Setting Dean's List flag)
+5. Bitwise XOR (mask ^ 1)    : 13 (Toggling Tuition flag)
+6. Bitwise NOT (~mask)       : -13 (Inverted bitmask)
+7. Right Shift (mask >> 1)   : 6 (Shift right by 1 bit)
+============================================================
+
+
+============================================================
+             OOP & JAVA EVALUATOR MODE
+============================================================
+
+ 1.  Data Types, Variables & Scope
+ 2.  Operators & Operator Precedence
+ 3.  Type Conversion & Casting
+ 4.  Control Flow & Jump Statements
+ 5.  Arrays & String Methods
+ 6.  Constructors & Method Overloading
+ 7.  Static Members & Parameter Passing
+ 8.  Inheritance, super & final
+ 9.  Polymorphism & Dynamic Binding
+10.  Abstract Classes & Methods
+11.  Interfaces & Interface References
+12.  Object Class Methods
+13.  Packages & CLASSPATH
+14.  Run All Syllabus Demonstrations
+ 0.  Back to Main Menu
+
+============================================================
+Enter your choice: 
+============================================================
+ 6. CONSTRUCTORS & METHOD OVERLOADING DEMONSTRATION
+============================================================
+1. Constructor Overloading & Chaining (this):
+   - Default Constructor chained via this(...) : PERS-DEF | Anonymous
+   - Subclass Constructor chained via super(...) : Student(id, name, age, ...)
+
+2. Method Overloading (Compile-Time Polymorphism):
+   a) GradeCalculator.calculateGrade():
+      - By percentage (85.0)       : Grade A
+      - By marks array ([95..94])  : Grade O
+      - By total and max (65, 100) : Grade C
+   b) FeeCalculator.calculateSemesterFee():
+      - By (credits, dept)              : INR 72500.00
+      - By (credits, dept, host, schol) : INR 88125.00
+   c) StudentService.searchStudents():
+      - By Department enum (CSE) : 4 match(es)
+      - By Name query ("Arjun")   : 1 match(es)
+============================================================
+
+
+============================================================
+             OOP & JAVA EVALUATOR MODE
+============================================================
+
+ 1.  Data Types, Variables & Scope
+ 2.  Operators & Operator Precedence
+ 3.  Type Conversion & Casting
+ 4.  Control Flow & Jump Statements
+ 5.  Arrays & String Methods
+ 6.  Constructors & Method Overloading
+ 7.  Static Members & Parameter Passing
+ 8.  Inheritance, super & final
+ 9.  Polymorphism & Dynamic Binding
+10.  Abstract Classes & Methods
+11.  Interfaces & Interface References
+12.  Object Class Methods
+13.  Packages & CLASSPATH
+14.  Run All Syllabus Demonstrations
+ 0.  Back to Main Menu
+
+============================================================
+Enter your choice: 
+============================================================
+ DEMONSTRATION: Dynamic Method Binding (Runtime Polymorphism)
+============================================================
+Array of abstract base type: Person[] people = new Person[3];
+Holding both Student and Faculty instances seamlessly.
+
+Executing: person.displayDetails() [Reference Type: Person, Actual: Student]
+------------------------------------------------------------
+ [STUDENT RECORD] Arjun Nair (SRN: R24CS001)
+------------------------------------------------------------
+  Student ID          : REVA-STU-1035
+  Full Name           : Arjun Nair
+  Age                 : 20
+  SRN                 : R24CS001
+  Department          : Computer Science & Engineering
+  Semester            : 5
+  Admission Number    : 2026000035
+  Hosteller           : NO
+  Scholarship         : 0.0%
+  Marks (5 Subjects)  : [75, 75, 75, 75, 75]
+  Calculated Grade    : U
+  Outstanding Fee     : INR 0.00
+------------------------------------------------------------
+  -> [instanceof Student: true] SRN: R24CS001 | Grade: U | Fee Due: INR 0.00
+
+Executing: person.displayDetails() [Reference Type: Person, Actual: Faculty]
+------------------------------------------------------------
+ [FACULTY RECORD] Prof. Dr. Vikram Shah
+------------------------------------------------------------
+  Faculty ID          : FAC-CSE-01
+  Name                : Dr. Vikram Shah
+  Age                 : 48 years
+  Designation         : Professor & HOD
+  Department          : Computer Science & Engineering
+  Specialization      : Artificial Intelligence & Machine Learning
+------------------------------------------------------------
+  -> [instanceof Faculty: true] Specialization: Artificial Intelligence & Machine Learning | Designation: Professor & HOD
+
+Executing: person.displayDetails() [Reference Type: Person, Actual: Faculty]
+------------------------------------------------------------
+ [FACULTY RECORD] Prof. Dr. Rajiv Nair
+------------------------------------------------------------
+  Faculty ID          : FAC-ECE-01
+  Name                : Dr. Rajiv Nair
+  Age                 : 45 years
+  Designation         : Professor & Dean
+  Department          : Electronics & Communication Engineering
+  Specialization      : VLSI Design & Embedded Systems
+------------------------------------------------------------
+  -> [instanceof Faculty: true] Specialization: VLSI Design & Embedded Systems | Designation: Professor & Dean
+
+
+============================================================
+             OOP & JAVA EVALUATOR MODE
+============================================================
+
+ 1.  Data Types, Variables & Scope
+ 2.  Operators & Operator Precedence
+ 3.  Type Conversion & Casting
+ 4.  Control Flow & Jump Statements
+ 5.  Arrays & String Methods
+ 6.  Constructors & Method Overloading
+ 7.  Static Members & Parameter Passing
+ 8.  Inheritance, super & final
+ 9.  Polymorphism & Dynamic Binding
+10.  Abstract Classes & Methods
+11.  Interfaces & Interface References
+12.  Object Class Methods
+13.  Packages & CLASSPATH
+14.  Run All Syllabus Demonstrations
+ 0.  Back to Main Menu
+
+============================================================
+Enter your choice: 
+============================================================
+ 11. INTERFACES & INTERFACE REFERENCES DEMONSTRATION
+============================================================
+1. Interface Contract & Inheritance:
+   - Reportable defines getReportHeader() default method and UNIVERSITY_TAG.
+   - Payable extends Reportable (Multiple inheritance of behavior).
+   - Student implements Payable (thus also fulfilling Reportable).
+
+2. Interface Reference Access:
+Invoking rep.generateReport() via Reportable reference:
+=== REVA UNIVERSITY - BUCKET OF EXCELLENCE ===
+Student: Arjun Nair           | SRN: R24CS001     | Dept: CSE    | Sem: 5
+Grade: S   | Credits: 24  | Fee Balance: INR 63975.00  
+
+Invoking pay.getDueAmount() via Payable reference: INR 63975.0
+============================================================
+
+
+============================================================
+             OOP & JAVA EVALUATOR MODE
+============================================================
+
+ 1.  Data Types, Variables & Scope
+ 2.  Operators & Operator Precedence
+ 3.  Type Conversion & Casting
+ 4.  Control Flow & Jump Statements
+ 5.  Arrays & String Methods
+ 6.  Constructors & Method Overloading
+ 7.  Static Members & Parameter Passing
+ 8.  Inheritance, super & final
+ 9.  Polymorphism & Dynamic Binding
+10.  Abstract Classes & Methods
+11.  Interfaces & Interface References
+12.  Object Class Methods
+13.  Packages & CLASSPATH
+14.  Run All Syllabus Demonstrations
+ 0.  Back to Main Menu
+
+============================================================
+Enter your choice: 
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+--- [REMOVE STUDENT RECORD] ---
+Enter SRN of student to remove: Confirm removal of 'Akash Jain' (SRN: R24IS003)?
+Type 'yes' to confirm or 'no' to cancel: [SUCCESS] Student record 'R24IS003' removed from database.
+
+============================================================
+        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM
+============================================================
+
+ 1.  Add New Student
+ 2.  Display All Student Records
+ 3.  Search Student by SRN
+ 4.  Search Student by Partial Name
+ 5.  Calculate / Record Semester Fee
+ 6.  Remove Student Record
+ 7.  Sort Students
+ 8.  View Department Fee Analytics
+ 9.  View University Personnel Directory
+10.  OOP & Java Concept Demonstrations
+ 0.  Exit
+
+============================================================
+Enter your choice: 
+Exiting REVA UNIVERSITY - STUDENT MANAGEMENT SYSTEM. Thank you!
