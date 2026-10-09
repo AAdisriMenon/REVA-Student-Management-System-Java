@@ -1,53 +1,29 @@
-// FEATURE: Packages - Defining a package
 package com.reva.sms.main;
 
-// FEATURE: Packages - Importing packages (Wildcard and specific imports)
 import com.reva.sms.model.*;
 import com.reva.sms.service.FeeCalculator;
 import com.reva.sms.service.GradeCalculator;
 import com.reva.sms.service.StudentService;
 import java.util.Scanner;
 
-/**
- * FEATURE: Classes and objects - Application entry point class
- * FEATURE: Console input and output - Interactive terminal UI using java.util.Scanner
- * FEATURE: Formatting output - Tabular reporting and formatted prompts via System.out.printf
- * 
- * Main provides an interactive, menu-driven console user interface for REVA University
- * department staff and academic evaluators.
- * 
- * Course Context: REVA University, B.Sc. (BSTCs), Semester V
- * Java Programming (Units I & II Mini Project)
- */
 public class Main {
 
-    // FEATURE: Variables and constants - Application branding constants
     public static final String APP_TITLE = "REVA UNIVERSITY - STUDENT MANAGEMENT SYSTEM";
     public static final String COURSE_INFO = "B.Sc. (BSTCs) Sem V - Java Programming (Unit I & II Project)";
 
-    /**
-     * FEATURE: Methods - Main method (Execution entry point)
-     * FEATURE: Static fields and methods - Static main method
-     * FEATURE: Parameter passing - Command-line String[] args passed by value
-     */
     public static void main(String[] args) {
         StudentService service = new StudentService();
         Scanner scanner = new Scanner(System.in);
 
-        // Preload comprehensive university dataset (33 students, 22 faculty across 11 departments)
         service.loadSampleData();
 
         printBanner();
 
-        // FEATURE: Control flow statements - while loop driving menu execution
-        // FEATURE: Scope and lifetime of variables - running boolean flag with main method scope
         boolean running = true;
         while (running) {
             printMenu();
             int choice = readInt(scanner, "Enter your choice: ", 0, 10);
 
-            // FEATURE: Control flow statements - switch-case construct
-            // FEATURE: Jump statements - break to exit switch
             switch (choice) {
                 case 1:
                     handleAddStudent(scanner, service);
@@ -81,7 +57,7 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("\nExiting " + APP_TITLE + ". Thank you!");
-                    running = false; // Terminates loop
+                    running = false;
                     break;
                 default:
                     System.out.println("[WARNING] Invalid selection. Please choose an option from the menu.");
@@ -92,9 +68,6 @@ public class Main {
         scanner.close();
     }
 
-    /**
-     * Prints stylized banner.
-     */
     private static void printBanner() {
         System.out.println("================================================================================");
         System.out.println("   " + APP_TITLE);
@@ -102,9 +75,6 @@ public class Main {
         System.out.println("================================================================================");
     }
 
-    /**
-     * Prints clean, professional numbered menu.
-     */
     private static void printMenu() {
         System.out.println("\n============================================================");
         System.out.println("        REVA UNIVERSITY STUDENT MANAGEMENT SYSTEM");
@@ -123,9 +93,6 @@ public class Main {
         System.out.println("============================================================");
     }
 
-    /**
-     * Adds a new student record with auto-ID, auto-grade, and auto-fee calculation.
-     */
     private static void handleAddStudent(Scanner scanner, StudentService service) {
         System.out.println("\n--- [ADD NEW STUDENT] ---");
 
@@ -173,21 +140,15 @@ public class Main {
             System.out.printf("  -> Total Marks         : %d / %d (%.2f%%)\n", totalMarks, GradeCalculator.MAX_TOTAL_MARKS, percentage);
             System.out.printf("  -> Computed Grade      : %c (%s)\n", grade, GradeCalculator.getGradeDescription(grade));
             System.out.printf("  -> Computed Semester Fee: INR %.2f\n", feeDue);
-            
+
             FeeCalculator.printFeeBreakdown(credits, selectedDept, isHosteller, scholarship);
         }
     }
 
-    /**
-     * Display all student records in formatted table.
-     */
     private static void handleDisplayAll(StudentService service) {
         service.displayAllStudentsTable();
     }
 
-    /**
-     * Search student by exact SRN.
-     */
     private static void handleSearchBySrn(Scanner scanner, StudentService service) {
         System.out.println("\n--- [SEARCH BY SRN] ---");
         String srn = readString(scanner, "Enter SRN to search (e.g. R24CS001): ");
@@ -200,9 +161,6 @@ public class Main {
         }
     }
 
-    /**
-     * Search student by partial name.
-     */
     private static void handleSearchByName(Scanner scanner, StudentService service) {
         System.out.println("\n--- [SEARCH BY PARTIAL NAME] ---");
         String query = readString(scanner, "Enter name or partial letters: ");
@@ -217,9 +175,6 @@ public class Main {
         }
     }
 
-    /**
-     * Calculate / Record fee payment for student.
-     */
     private static void handleFeePayment(Scanner scanner, StudentService service) {
         System.out.println("\n------------------------------------------------------------");
         System.out.println("            CALCULATE / RECORD SEMESTER FEE");
@@ -267,9 +222,6 @@ public class Main {
         }
     }
 
-    /**
-     * Remove student record by SRN.
-     */
     private static void handleRemoveStudent(Scanner scanner, StudentService service) {
         System.out.println("\n--- [REMOVE STUDENT RECORD] ---");
         String srn = readString(scanner, "Enter SRN of student to remove: ");
@@ -293,9 +245,6 @@ public class Main {
         }
     }
 
-    /**
-     * Sort students with sub-criteria options.
-     */
     private static void handleSortStudents(Scanner scanner, StudentService service) {
         System.out.println("\n--- [SORT STUDENT RECORDS] ---");
         System.out.println("Select Sorting Criteria:");
@@ -332,23 +281,14 @@ public class Main {
         }
     }
 
-    /**
-     * View department fee analytics and average fee due.
-     */
     private static void handleFeeAnalytics(StudentService service) {
         service.displayDepartmentFeeAnalytics();
     }
 
-    /**
-     * View university personnel directory.
-     */
     private static void handlePersonnelDirectory(StudentService service) {
         service.displayPersonnelDirectory();
     }
 
-    /**
-     * Evaluator Mode: Detailed Java & OOP Syllabus Demonstrations.
-     */
     private static void handleOOPDemonstrations(Scanner scanner, StudentService service) {
         boolean inEvaluatorMenu = true;
         while (inEvaluatorMenu) {
@@ -423,9 +363,6 @@ public class Main {
         }
     }
 
-    // =========================================================================
-    // EVALUATOR DEMONSTRATION SUITE METHODS
-    // =========================================================================
 
     private static void demonstrateDataTypesAndScope() {
         System.out.println("\n============================================================");
@@ -495,13 +432,13 @@ public class Main {
         System.out.println("============================================================");
         short credits = 24;
         double creditRate = 3200.0;
-        double tuition = credits * creditRate; // Implicit widening: short to double
+        double tuition = credits * creditRate;
         System.out.println("1. Implicit Widening Conversion:");
         System.out.printf("   short credits (%d) * double rate (%.2f) = double tuition (%.2f)\n", credits, creditRate, tuition);
 
         int totalMarks = 455;
         int maxMarks = 500;
-        double percentage = ((double) totalMarks / maxMarks) * 100.0; // Explicit widening cast (int to double)
+        double percentage = ((double) totalMarks / maxMarks) * 100.0;
         System.out.println("\n2. Explicit Widening Cast:");
         System.out.printf("   ((double) %d / %d) * 100.0 = %.2f%%\n", totalMarks, maxMarks, percentage);
 
@@ -640,11 +577,11 @@ public class Main {
         }
 
         if (s != null) {
-            Reportable rep = s; // Interface reference
+            Reportable rep = s;
             System.out.println("Invoking rep.generateReport() via Reportable reference:");
             System.out.println(rep.generateReport());
 
-            Payable pay = s; // Interface reference
+            Payable pay = s;
             System.out.println("Invoking pay.getDueAmount() via Payable reference: INR " + pay.getDueAmount());
         }
         System.out.println("============================================================\n");
@@ -716,7 +653,6 @@ public class Main {
         System.out.println("============================================================\n");
     }
 
-    // ==================== ROBUST INPUT VALIDATION HELPERS ====================
 
     public static int readInt(Scanner scanner, String prompt, int min, int max) {
         int value = 0;

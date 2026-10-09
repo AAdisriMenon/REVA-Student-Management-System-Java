@@ -29,7 +29,7 @@ REVA-STU-1002  | R24CS002     | Priya Sharma           | CSE    | 5    | O      
 REVA-STU-1003  | R24CS003     | Rahul Menon            | CSE    | 6    | A      |      72500.00 | NO        
 REVA-STU-1004  | R24EC001     | Sneha Iyer             | ECE    | 5    | A      |     107550.00 | YES       
 REVA-STU-1005  | R24EC002     | Karthik Rao            | ECE    | 6    | B      |      68500.00 | NO        
-REVA-STU-1006  | R24EC003     | Ananya Krishnan        | ECE    | 3    | S      |     100400.00 | YES       
+REVA-STU-1006  | R24EC003     | Ananya Krishnan        | ECE    | 3    | O      |     100400.00 | YES       
 REVA-STU-1007  | R24ME001     | Rohan Mehta            | MECH   | 7    | B      |      98325.00 | YES       
 REVA-STU-1008  | R24ME002     | Meera Nair             | MECH   | 4    | A      |      57150.00 | NO        
 REVA-STU-1009  | R24ME003     | Vivek Kumar            | MECH   | 5    | C      |      98500.00 | YES       
@@ -98,7 +98,7 @@ Enter Marks for 5 Core Subjects (0 - 100 each):
 [SUCCESS] Student Record Successfully Created!
   -> Assigned Student ID : REVA-STU-1034
   -> Total Marks         : 455 / 500 (91.00%)
-  -> Computed Grade      : 0 (Outstanding Performance (Top Tier))
+  -> Computed Grade      : O (Outstanding Performance (Top Tier))
   -> Computed Semester Fee: INR 104240.00
   ----------------- Fee Breakdown -----------------
   Tuition Fee              : INR   76800.00 (24 credits @ 3200.00)
@@ -654,7 +654,7 @@ Enter your choice:
 Invoking rep.generateReport() via Reportable reference:
 === REVA UNIVERSITY - BUCKET OF EXCELLENCE ===
 Student: Arjun Nair           | SRN: R24CS001     | Dept: CSE    | Sem: 5
-Grade: S   | Credits: 24  | Fee Balance: INR 63975.00  
+Grade: O   | Credits: 24  | Fee Balance: INR 63975.00  
 
 Invoking pay.getDueAmount() via Payable reference: INR 63975.0
 ============================================================

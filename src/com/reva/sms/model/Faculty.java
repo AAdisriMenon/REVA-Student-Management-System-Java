@@ -1,29 +1,10 @@
-// FEATURE: Packages - Defining a package
 package com.reva.sms.model;
 
-/**
- * FEATURE: Inheritance hierarchies - Second branch of inheritance under Person
- * FEATURE: Super and sub classes - Subclass of Person
- * FEATURE: Polymorphism: dynamic binding - Demonstrates polymorphic dispatch alongside Student
- * 
- * Faculty represents teaching staff members at REVA University.
- * It is included in this project specifically to demonstrate hierarchical inheritance
- * and dynamic method dispatch across disparate Person subtypes.
- * 
- * Course Context: REVA University, B.Sc. (BSTCs), Semester V
- * Java Programming (Units I & II Mini Project)
- */
 public class Faculty extends Person {
-    // FEATURE: Member access rules - Private field
     private String designation;
     private Department department;
     private String specialization;
 
-    /**
-     * FEATURE: Constructors - Parameterized constructor
-     * FEATURE: super keyword - super(id, name, age)
-     * FEATURE: this reference - Assigning parameters to fields
-     */
     public Faculty(String id, String name, int age, String designation, Department department, String specialization) {
         super(id, name, age);
         this.designation = designation;
@@ -55,12 +36,6 @@ public class Faculty extends Person {
         this.specialization = specialization;
     }
 
-    /**
-     * FEATURE: Abstract classes and methods - Concrete implementation of abstract method
-     * FEATURE: Method overriding - Custom faculty implementation
-     * FEATURE: Member access rules - Accessing protected name and age from Person
-     * FEATURE: Formatting output - System.out.printf
-     */
     @Override
     public void displayDetails() {
         System.out.println("------------------------------------------------------------");
@@ -75,13 +50,9 @@ public class Faculty extends Person {
         System.out.println("------------------------------------------------------------");
     }
 
-    /**
-     * FEATURE: The Object class and its methods - Overriding toString()
-     * FEATURE: super keyword - Invoking superclass toString()
-     */
     @Override
     public String toString() {
-        return "Faculty [" + super.toString() + ", Designation=" + designation + 
+        return "Faculty [" + super.toString() + ", Designation=" + designation +
                ", Dept=" + department.getCode() + ", Spec=" + specialization + "]";
     }
 }

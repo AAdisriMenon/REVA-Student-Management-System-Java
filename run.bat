@@ -1,8 +1,4 @@
 @echo off
-REM ============================================================================
-REM REVA University - Student Management System
-REM Course: B.Sc. (BSTCs), Semester V - Java Programming (Unit I & II Mini Project)
-REM ============================================================================
 
 echo Compiling Java source files into bin directory...
 if not exist "bin" mkdir bin

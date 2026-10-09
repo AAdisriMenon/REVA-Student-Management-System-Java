@@ -1,142 +1,88 @@
 # Student Management System (SMS)
-### Object-Oriented Programming in Java — Mini Project
-**Course:** B.Sc. (BSTCs), Semester V — Java Programming (Units I & II)  
-**Author:** A Adisri Menon (SRN: `R24SA001`)  
-**Institution:** REVA University, Bengaluru  
-**Environment:** Java SE (JDK 17+)  
 
----
+Console-based Java OOP mini project for REVA University student records, grading, fees, and syllabus demonstrations.
 
-## 1. Project Overview & Key Features
+| Field | Detail |
+|---|---|
+| **Course** | B.Sc. (BSTCs) Sem V — Java Programming (Units I & II) |
+| **Author** | A Adisri Menon — SRN: `R24SA001` |
+| **Institution** | REVA University, Bengaluru |
+| **Environment** | Java SE (JDK 17+) |
 
-The **Student Management System (SMS)** is an in-memory, console-based Java application built to manage university student records, fee assessments, academic evaluations, and institutional reporting. It is structured to demonstrate fundamental and advanced Object-Oriented Programming (OOP) concepts in Java.
+## Features
+- **Registration** — SRN, department, semester, credits, hostel, scholarship.
+- **Grading** — 5-subject marks → percentage → grade (`O`/`A`/`B`/`C`/`D`/`F`).
+- **Fee Engine** — tuition + hostel + amenities − scholarship discount.
+- **Search & Sort** — SRN / partial-name search; bubble-sort by name, SRN, semester, fee.
+- **Evaluator Demo** — 14 interactive OOP demonstrations covering all 21 rubric items.
+## Workflow
+<p align="center"><img src="docs/screenshots/workflow.png" alt="Workflow" width="800"></p>
+## Output Screenshots
+<p align="center"><img src="docs/screenshots/output-01-main-menu.png" alt="Main Menu" width="800"><br><sub>Main Menu</sub></p>
+<p align="center"><img src="docs/screenshots/output-02-add-student.png" alt="Add Student — Input" width="800"><br><img src="docs/screenshots/output-03-add-student-result.png" alt="Add Student — Result &amp; Fee Breakdown" width="800"><br><sub>Add Student — Input &amp; Result</sub></p>
+<p align="center"><img src="docs/screenshots/output-04-display-all.png" alt="Display All Students" width="800"><br><sub>Display All Students</sub></p>
+<p align="center"><img src="docs/screenshots/output-05-search-by-srn.png" alt="Search by SRN" width="800"><br><sub>Search by SRN</sub></p>
+<p align="center"><img src="docs/screenshots/output-06-search-by-name.png" alt="Search by Partial Name" width="800"><br><sub>Search by Partial Name</sub></p>
+<p align="center"><img src="docs/screenshots/output-07-fee-payment.png" alt="Fee Payment" width="800"><br><sub>Fee Payment</sub></p>
+<p align="center"><img src="docs/screenshots/output-08-remove-student.png" alt="Remove Student" width="800"><br><sub>Remove Student</sub></p>
+<p align="center"><img src="docs/screenshots/output-09-sort-by-name.png" alt="Sort by Name" width="800"><br><img src="docs/screenshots/output-10-sort-by-name-cont.png" alt="Sort by Name (cont.)" width="800"><br><sub>Sort by Name</sub></p>
+<p align="center"><img src="docs/screenshots/output-11-sort-by-srn.png" alt="Sort by SRN" width="800"><br><img src="docs/screenshots/output-12-sort-by-srn-cont.png" alt="Sort by SRN (cont.)" width="800"><br><sub>Sort by SRN</sub></p>
+<p align="center"><img src="docs/screenshots/output-13-sort-by-semester.png" alt="Sort by Semester" width="800"><br><img src="docs/screenshots/output-14-sort-by-semester-cont.png" alt="Sort by Semester (cont.)" width="800"><br><sub>Sort by Semester</sub></p>
+<p align="center"><img src="docs/screenshots/output-15-sort-by-fee.png" alt="Sort by Fee Due" width="800"><br><img src="docs/screenshots/output-16-sort-by-fee-cont.png" alt="Sort by Fee Due (cont.)" width="800"><br><sub>Sort by Fee Due</sub></p>
+<p align="center"><img src="docs/screenshots/output-17-fee-analytics.png" alt="Fee Analytics" width="800"><br><sub>Fee Analytics</sub></p>
+<p align="center"><img src="docs/screenshots/output-18-personnel-directory.png" alt="Personnel Directory — Students" width="800"><br><img src="docs/screenshots/output-19-personnel-directory-cont.png" alt="Personnel Directory — Faculty" width="800"><br><sub>Personnel Directory</sub></p>
+<p align="center"><img src="docs/screenshots/output-20-oop-evaluator-menu.png" alt="OOP Evaluator Menu" width="800"><br><img src="docs/screenshots/output-21-oop-demo-data-types.png" alt="OOP Demo — Data Types" width="800"><br><img src="docs/screenshots/output-22-oop-demo-arrays.png" alt="OOP Demo — Arrays" width="800"><br><img src="docs/screenshots/output-23-oop-demo-strings.png" alt="OOP Demo — Strings" width="800"><br><sub>OOP Evaluator Demonstrations</sub></p>
 
-### Key Features
-- **Student Registration:** Captures student identity, academic department, semester, course credits, hostel residency, and scholarship percentage.
-- **Academic Grading:** Evaluates 5-subject core marks, computing percentage and letter grades (`O`, `A`, `B`, `C`, `D`, `F`) according to REVA University standards.
-- **Fee Assessment Engine:** Computes net payable semester fees based on credit load, department credit rates, campus amenities, hostel charges, and scholarship deductions.
-- **Record Search & Query:** Fast searching by exact SRN or partial student name.
-- **In-Place Record Sorting:** Bubble sort algorithm organizing student records alphabetically by name.
-- **Department Fee Analytics:** Summarizes total enrolled students, cleared vs. outstanding balances, gross revenue due, and average fee per student.
-- **Polymorphic University Directory:** Dynamic method dispatch over heterogeneous arrays containing both `Student` and `Faculty` instances, with `instanceof` type checking.
-- **OOP Syllabus Demonstrations (Evaluator Mode):** Dedicated menu option demonstrating pass-by-value semantics, operator precedence, bitwise masking, method overloading, interface reference access, and `Object` class method contracts.
-
----
-
-## 2. Architecture & Package Structure
-
-The project enforces separation of concerns across three packages:
-
-```
-student-management-system/
-├── bin/                                         # Compiled bytecode (.class files)
-├── src/                                         # Source code root
-│   └── com/
-│       └── reva/
-│           └── sms/
-│               ├── main/
-│               │   └── Main.java                # Console UI, menu loop, and input validation
-│               ├── model/
-│               │   ├── Department.java          # Department enum with credit tuition rates
-│               │   ├── Faculty.java             # Concrete Person subclass
-│               │   ├── Payable.java             # Billable entity interface (extends Reportable)
-│               │   ├── Person.java              # Abstract base class with encapsulated identity
-│               │   ├── Reportable.java          # Contract interface with default reporting header
-│               │   └── Student.java             # Concrete subclass implementing Payable
-│               └── service/
-│                   ├── FeeCalculator.java       # Tuition, hostel, amenities & scholarship logic
-│                   ├── GradeCalculator.java     # Final utility class for grading
-│                   └── StudentService.java      # Fixed-capacity storage, CRUD, search, sorting
-├── sample_output.txt                            # Captured console execution transcript
-├── test_input.txt                               # Scripted input for end-to-end execution
-├── run.bat                                      # Windows compilation and launch script
-└── README.md                                    # Project documentation and syllabus matrix
-```
-
-### Class and Interface Hierarchy
-```
-           <<interface>>
-            Reportable
-                ▲
-                │ extends
-           <<interface>>
-             Payable
-                ▲
-                │ implements
-   ┌────────────┴────────────┐
-   │                         │
-[Person] (abstract)          │
-   ▲                         │
-   ├── [Student] ────────────┘ (extends Person, implements Payable)
-   └── [Faculty]               (extends Person)
-```
-
----
-
-## 3. Mandatory 21-Item Rubric Traceability Matrix
-
-| # | Java / OOP Rubric Requirement | Implementation Location | Description |
-|---|---|---|---|
-| **1** | Encapsulation & Classes (3–4+ classes) | `Person`, `Student`, `Faculty`, `Department`, `FeeCalculator`, `GradeCalculator`, `StudentService`, `Main` | Private fields, protected inheritance fields, and controlled public getters/setters with validation. |
-| **2** | Data Types, Scope & Constants | `Student.java`, `FeeCalculator.java`, `Person.java` | Primitives (`byte`, `short`, `int`, `long`, `float`, `double`, `char`, `boolean`), instance/static/local scope, and `public static final` constants. |
-| **3** | Operators & Precedence | `FeeCalculator.java`, `Student.java`, `Main.java` | Explicit operator precedence in `FeeCalculator.demonstrateOperatorPrecedence()` (`10 + 5 * 2 = 20` vs `(10 + 5) * 2 = 30`), bitwise operators (`&`, `|`, `^`, `~`, `<<`, `>>`), relational, logical, ternary, and compound assignment. |
-| **4** | Type Conversion & Casting | `GradeCalculator.java`, `FeeCalculator.java`, `StudentService.java` | Implicit widening (`short` to `double` in multiplication) and explicit narrowing (`(double) total / max`, `(byte) ...`, `(short) ...`, `(Student) person`). |
-| **5** | Enumerated Types (`enum`) | `Department.java` | `enum Department` containing 11 university departments with codes, names, credit rates, constructor, getters, and static `fromString()`. |
-| **6** | Control Flow Statements | `Main.java`, `StudentService.java`, `GradeCalculator.java` | Selection (`if-else-if`, `switch-case`), loops (`while`, `do-while` for input validation, `for`, enhanced `for-each`), and jump statements (`break`, `continue`, `return`). |
-| **7** | Arrays & Multi-Element Processing | `Student.java`, `StudentService.java`, `GradeCalculator.java` | 5-subject `int[] marks`, fixed-size `Student[]` array, in-place Bubble Sort, array left-shift on deletion, and defensive copying via `Arrays.copyOf()`. |
-| **8** | Console I/O & Formatted Output | `Main.java`, `StudentService.java` | Interactive `Scanner` reading strings, integers, doubles, and booleans; tabular reporting formatted via `System.out.printf`. |
-| **9** | Constructors & `this` Keyword | `Person.java`, `Student.java`, `Faculty.java` | Parameterized constructors, default constructors, constructor chaining via `this(...)`, and disambiguating field shadowing with `this.field`. |
-| **10** | Method Overloading | `GradeCalculator.java`, `FeeCalculator.java`, `StudentService.java` | Compile-time polymorphism with overloaded signatures: `calculateGrade(double)`, `(int[])`, `(int, int)`; `calculateSemesterFee(short, Department)`, `(short, Department, boolean, float)`, `(Student)`; `searchStudents(Department)`, `(String)`. |
-| **11** | Parameter Passing (Pass-by-Value) | `StudentService.demonstrateParameterPassing()` | Demonstrates pass-by-value for primitives (caller value unchanged) versus object references (state mutated through reference copy). |
-| **12** | Static Members | `Person.java`, `Student.java`, `GradeCalculator.java`, `StudentService.java` | Static counters (`totalPersonInstances`, `studentCounter`), static utility methods (`calculateGrade`, `generateNextIdSafe`), and static constants. |
-| **13** | Access Control Modifiers | All source files | Systematic application of `public`, `protected` (inheritance access for `name`, `age`), `private`, and default package-private visibility. |
-| **14** | `java.lang.String` Class API | `StudentService.java`, `Department.java`, `Main.java` | Multiple `String` methods exercised: `length()`, `toUpperCase()`, `toLowerCase()`, `trim()`, `contains()`, `substring()`, `equalsIgnoreCase()`, `compareToIgnoreCase()`. |
-| **15** | Inheritance, `super` & `final` | `Person.java`, `Student.java`, `Faculty.java`, `GradeCalculator.java` | Hierarchical inheritance (`Person` extended by `Student` and `Faculty`), `super(...)` constructor calls, `super.toString()`, `final` class `GradeCalculator`, and `final` method `getId()`. |
-| **16** | `Object` Class Method Overrides | `Person.java`, `Student.java`, `Faculty.java` | Custom overrides of `toString()`, `equals(Object)` (SRN-based for `Student`, ID-based for `Person`), and `hashCode()`. |
-| **17** | Dynamic Method Binding | `StudentService.demonstratePolymorphicDispatch()` | Runtime polymorphism calling overridden `displayDetails()` across heterogeneous `Person[]` arrays, with `instanceof` pattern matching and downcasting. |
-| **18** | Abstract Classes & Methods | `Person.java` | `abstract class Person` declaring abstract contract method `public abstract void displayDetails();` implemented by derived subclasses. |
-| **19** | Interfaces & Default Methods | `Reportable.java`, `Payable.java`, `Student.java` | Interface definition with constants, abstract methods, `default String getReportHeader()`, and polymorphic reference invocation (`Payable p = student; p.payFee(amt);`). |
-| **20** | Interface Inheritance | `Payable.java` | `public interface Payable extends Reportable`, demonstrating multiple inheritance of type/behavior. |
-| **21** | Packages & CLASSPATH | `com.reva.sms.*`, `run.bat` | Modular package structure across `main`, `model`, and `service`, with explicit classpath configuration. |
-
----
-
-## 4. Compilation and Execution
-
-### Prerequisites
-- Java Development Kit (JDK 17 or higher)
-- Windows Command Prompt or PowerShell
-
-### Method 1: Using the Batch Script (Recommended)
+## How to Run
 ```cmd
 run.bat
-```
-
-### Method 2: Manual Terminal Commands
-From the project root directory:
-
-1. **Compile all packages into the `bin` directory:**
-   ```powershell
-   if (!(Test-Path bin)) { New-Item -ItemType Directory bin }
-   javac -d bin -sourcepath src src/com/reva/sms/model/*.java src/com/reva/sms/service/*.java src/com/reva/sms/main/*.java
-   ```
-
-2. **Run the application:**
-   ```powershell
-   java -cp bin com.reva.sms.main.Main
-   ```
-
-### Method 3: Non-Interactive Verification Script
-To execute the automated end-to-end test suite and view output:
-```powershell
+javac -d bin -sourcepath src src/com/reva/sms/model/*.java src/com/reva/sms/service/*.java src/com/reva/sms/main/*.java
+java -cp bin com.reva.sms.main.Main
 Get-Content test_input.txt | java -cp bin com.reva.sms.main.Main
 ```
 
----
+## Project Structure
+```
+JAVA/src/com/reva/sms/
+  main/    Main.java              # Menu, input validation, demo dispatch
+  model/   Department.java        # Enum: 11 departments, credit rates
+           Faculty.java           # Person subclass
+           Payable.java           # Interface extending Reportable
+           Person.java            # Abstract base (id, name, age)
+           Reportable.java        # Interface, default getReportHeader()
+           Student.java           # Subclass implementing Payable
+  service/ FeeCalculator.java     # Fee computation, operator demo
+           GradeCalculator.java   # final utility class, grading
+           StudentService.java    # CRUD, sort, search, analytics
+  bin/  docs/  run.bat  test_input.txt  sample_output.txt
+```
+Hierarchy: `Reportable` ← `Payable` ← `Student`; `Person` ← `Student` / `Faculty`
 
-## 5. Understanding the Java CLASSPATH
+## Syllabus Coverage — Unit I & II (21 Items)
 
-The **CLASSPATH** specifies the locations where the Java Virtual Machine (JVM) and compiler (`javac`) search for compiled `.class` files.
-- **Directory Hierarchy:** In Java, package declarations correspond directly to filesystem folders (e.g., `package com.reva.sms.model;` maps to `com/reva/sms/model/Student.class`).
-- **Compilation (`-d bin`):** The `-d` flag directs `javac` to place generated bytecode into the `bin/` directory while automatically creating the required package subdirectories.
-- **Execution (`-cp bin`):** The `-cp` flag instructs the JVM to use `bin/` as the root of the classpath so that fully qualified class names like `com.reva.sms.main.Main` can be resolved at runtime.
+| # | Topic | File(s) | Evidence |
+|---|---|---|---|
+| 1 | Encapsulation & Classes | see `src/` | Private fields, validated getters/setters |
+| 2 | Data Types, Scope & Constants | `Student`, `Person` | All 8 primitives; static/instance/local |
+| 3 | Operators & Precedence | `FeeCalculator`, `Student` | `demonstrateOperatorPrecedence()`; `<<` `\|=` `&` |
+| 4 | Type Conversion & Casting | `GradeCalculator`, `Person` | `(double)total`; `short→double`; `(Person)obj` |
+| 5 | Enumerated Types | `Department` | 11-constant enum, `fromString()` |
+| 6 | Control Flow & Jumps | `Main`, `GradeCalculator` | `if-else-if`, `switch`, `while`, `do-while`, `break`/`continue` |
+| 7 | Arrays | `Student`, `StudentService` | `int[]marks`; bubble sort; left-shift delete |
+| 8 | Console I/O & Formatting | `Main`, `StudentService` | `Scanner`; `printf` tabular reports |
+| 9 | Constructors & `this` | `Person`, `Student` | Overloaded constructors; `this(...)` chaining |
+| 10 | Method Overloading | `GradeCalculator`, `FeeCalculator` | `calculateGrade`×3; `calculateSemesterFee`×3; `searchStudents`×2 |
+| 11 | Parameter Passing | `StudentService` | `demonstrateParameterPassing()`: primitive vs reference |
+| 12 | Static Members | `Person`, `Student`, `StudentService` | `generateNextIdSafe()`; counters; constants |
+| 13 | Access Modifiers | all files | `public`, `protected`(`name`,`age`), `private` |
+| 14 | `String` API | `StudentService`, `Department` | `trim()`, `contains()`, `equalsIgnoreCase()` |
+| 15 | Inheritance, `super` & `final` | `Person`, `GradeCalculator` | `super(...)`; `final class`; `final getId()` |
+| 16 | `Object` Class Overrides | `Person`, `Student` | `toString()`, SRN-keyed `equals()`, `hashCode()` |
+| 17 | Dynamic Binding | `StudentService` | `demonstratePolymorphicDispatch()`; `instanceof` pattern |
+| 18 | Abstract Classes | `Person` | `abstract class Person`; `abstract displayDetails()` |
+| 19 | Interfaces & Default Methods | `Reportable`, `Student` | `default getReportHeader()`; `Payable p = student` |
+| 20 | Interface Inheritance | `Payable` | `interface Payable extends Reportable` |
+| 21 | Packages & CLASSPATH | `com.reva.sms.*` | `main`/`model`/`service`; `-d bin`/`-cp bin` |
+
+## CLASSPATH
+`javac -d bin` writes `.class` files preserving package dirs; `java -cp bin` resolves `com.reva.sms.main.Main` from that root.
